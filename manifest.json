@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Aria2 Download Forwarder",
   "version": "1.0",
-  "description": "Intercepts downloads, adds context menu for images, and sends them to Aria2.",
+  "description": "Intercepts downloads, and sends them to Aria2.",
   "permissions": [
     "storage",
     "notifications",
@@ -10,7 +10,7 @@
     "webRequest"
   ],
   "host_permissions": [
-    "http://127.0.0.1:6800/jsonrpc"
+    "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js"
