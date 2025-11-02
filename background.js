@@ -76,7 +76,7 @@ chrome.downloads.onCreated.addListener((downloadItem) => {
 });
 
 
-chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
+chrome.downloads.onDeterminingFilename.addListener((item, _suggest) => {
   // 读取设置
   chrome.storage.sync.get(['isEnabled', 'showNotifications', 'rpcUrl', 'rpcSecret'], (settings) => {
     // 关闭、无 RPC、或 blob/data：不接管

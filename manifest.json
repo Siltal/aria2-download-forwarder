@@ -21,7 +21,7 @@
       "16": "icons/icon16.png",
       "48": "icons/icon48.png"
     },
-    "default_title": "Aria2 Download Manager",
+    "default_title": "Aria2 Download Forwarder",
     "default_popup": "popup.html"
   },
   "icons": {
