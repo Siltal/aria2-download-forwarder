@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aria2 Download Forwarder Settings</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            width: 450px;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.switch-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #status {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Switch styles from popup.css */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="icons/icon128.png" alt="Icon" width="48" height="48" style="margin-right: 15px;">
+        <h1>Aria2下载转发器 设置</h1>
+    </div>
+
+
+    <h2>功能开关</h2>
+    <div class="form-group switch-group">
+        <label for="interception-enabled">启用下载拦截</label>
+        <label class="switch">
+            <input type="checkbox" id="interception-enabled">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="form-group switch-group">
+        <label for="show-notifications">显示桌面通知</label>
+        <label class="switch">
+            <input type="checkbox" id="show-notifications">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    <h2>连接设置</h2>
+    <div class="form-group">
+        <label for="rpc-url">Aria2 RPC 地址 (仅支持http(s))</label>
+        <input type="text" id="rpc-url" placeholder="http://127.0.0.1:6800/jsonrpc">
+    </div>
+    <div class="form-group">
+        <label for="rpc-secret">Aria2 RPC 密钥 (如果没有请留空)</label>
+        <input type="text" id="rpc-secret">
+    </div>
+
+    <button id="save">保存设置</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Aria2 Download Forwarder",
+  "version": "1.0",
+  "description": "Intercepts downloads, adds context menu for images, and sends them to Aria2.",
+  "permissions": [
+    "storage",
+    "notifications",
+    "downloads",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:6800/jsonrpc"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    },
+    "default_title": "Aria2 Download Manager",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
